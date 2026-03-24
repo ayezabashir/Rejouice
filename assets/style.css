@@ -1,11 +1,103 @@
+@font-face {
+    font-family: SuisseIntl;
+    src: url(/assets/font/SuisseIntl-Light.woff2);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: SuisseIntl;
+    src: url(/assets/font/SuisseIntl-Regular.woff2);
+    font-weight: 400;
+}
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    font-family: SuisseIntl, sans-serif;
+    font-weight: 400;
+}
+
 body,
 html {
     height: 100%;
     width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    /* user-select: none; */
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background: #c2a5a5;
+    position: relative;
+}
+
+#cursor {
+    height: 7.5vw;
+    width: 7.5vw;
+    border-radius: 50%;
+    background-color: #ff5f38;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+}
+
+#cursor h5{
+    font-size: 16px;
+}
+
+#page1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#page1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    /* background-color: #000000; */
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vw;
+}
+
+nav h3 {
+    font-size: 1.15vw;
+}
+
+#page1-content svg {
+    width: 100%;
+    padding: 3vw;
+}
+
+#page2{
+    width: 100%;
+    height: 100vh;
 }
