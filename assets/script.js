@@ -17,11 +17,9 @@ gsap.effects.entranceEffect("nav h3", { y: -20 });
 gsap.effects.entranceEffect(".talk", { y: -20 });
 gsap.effects.entranceEffect(".taglines", { y: -50 });
 
-
 const cursor = document.getElementById("cursor");
 
 function cursorEffect(reel) {
-  
   const reelShort = document.querySelector(reel);
   reelShort.addEventListener("mousemove", (details) => {
     cursor.style.display = "flex";
@@ -111,12 +109,45 @@ let fullReel = document.querySelector(".reel-full");
 
 playVideo.addEventListener("click", () => {
   const showFull = shortReel.style.display !== "none";
-  let h5Text = cursor.querySelector("h5");
+  const h5Text = cursor.querySelector("h5");
 
-  shortReel.style.display = showFull ? "none" : "flex";
-  fullReel.style.display = showFull ? "flex" : "none";
-  
-  h5Text.innerHTML = showFull ? "Close Reel" : "Play Reel";
+  if (showFull) {
+    gsap.to(shortReel, {
+      display: "none",
+      rotate: 45,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.in",
+    });
+    gsap.fromTo(
+      fullReel,
+      { display: "none", rotate: -45, opacity: 0, scale: 0.8 },
+      {
+        display: "flex",
+        rotate: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.7)",
+      },
+    );
+    h5Text.innerHTML = "Close Reel";
+  } else {
+    gsap.to(fullReel, {
+      display: "none",
+      rotate: 45,
+      opacity: 0,
+      duration: 0.8,
+    });
+
+    gsap.fromTo(
+      shortReel,
+      { display: "none", rotate: -45, opacity: 0 },
+      { display: "flex", rotate: 0, opacity: 1, duration: 1 },
+    );
+
+    h5Text.innerHTML = "Play Reel";
+  }
 });
 
 let talkText = document.querySelector(".talk p");
