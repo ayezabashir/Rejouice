@@ -116,30 +116,6 @@ nav {
     gap: 50px;
 }
 
-#cursor {
-    height: 7.5vw;
-    width: 7.5vw;
-    border-radius: 50%;
-    background-color: #ff5f38;
-    position: fixed;
-    z-index: 3;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#cursor h5 {
-    font-size: 16px;
-}
-
-#page2 video {
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    object-fit: cover;
-    position: absolute;
-}
-
 nav {
     height: 6.2rem;
     width: 100%;
@@ -154,6 +130,10 @@ nav h3,
 nav a,
 nav span {
     font-size: 1.15vw;
+}
+
+nav h3 {
+    padding-right: 220px;
 }
 
 .nav-list-items {
@@ -174,5 +154,48 @@ nav span {
 
 #page2 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    background: #000;
+}
+
+#cursor {
+    height: 7.5vw;
+    width: 7.5vw;
+    border-radius: 50%;
+    background-color: #ff5f38;
+    position: fixed;
+    z-index: 3;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#cursor h5 {
+    font-size: 16px;
+}
+
+.reel-short {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    object-fit: cover;
+    position: absolute;
+}
+
+.reel-full {
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.reel-full video {
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
 }

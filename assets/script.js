@@ -12,30 +12,32 @@ gsap.registerEffect({
 });
 
 gsap.effects.entranceEffect(".letter", { duration: 1 });
-gsap.effects.entranceEffect(".item",{y:-20});
+gsap.effects.entranceEffect(".item", { y: -20 });
 gsap.effects.entranceEffect("nav h3", { y: -20 });
 gsap.effects.entranceEffect(".talk", { y: -20 });
 gsap.effects.entranceEffect(".taglines", { y: -50 });
 
-function cursorEffect() {
-  const page1Content = document.getElementById("page2");
-  const cursor = document.getElementById("cursor");
 
-  page1Content.addEventListener("mousemove", (details) => {
-    cursor.style.display="flex"
+const cursor = document.getElementById("cursor");
+
+function cursorEffect(reel) {
+  
+  const reelShort = document.querySelector(reel);
+  reelShort.addEventListener("mousemove", (details) => {
+    cursor.style.display = "flex";
     gsap.to(cursor, {
       x: details.clientX,
       y: details.clientY,
     });
   });
 
-  page1Content.addEventListener("mouseenter", () => {
+  reelShort.addEventListener("mouseenter", () => {
     gsap.to(cursor, {
       scale: 1,
     });
   });
 
-  page1Content.addEventListener("mouseleave", () => {
+  reelShort.addEventListener("mouseleave", () => {
     gsap.to(cursor, {
       scale: 0,
     });
@@ -92,7 +94,7 @@ function textEffect(text) {
   text.addEventListener("mouseenter", () => {
     gsap.to(text, {
       duration: 0.3,
-      x: 0,
+      x: 5,
     });
   });
   text.addEventListener("mouseleave", () => {
@@ -103,8 +105,22 @@ function textEffect(text) {
   });
 }
 
-let talkText = document.querySelector(".talk p");
+let playVideo = document.getElementById("page2-content");
+let shortReel = document.querySelector(".reel-short");
+let fullReel = document.querySelector(".reel-full");
 
-cursorEffect();
+playVideo.addEventListener("click", () => {
+  const showFull = shortReel.style.display !== "none";
+  let h5Text = cursor.querySelector("h5");
+
+  shortReel.style.display = showFull ? "none" : "flex";
+  fullReel.style.display = showFull ? "flex" : "none";
+  
+  h5Text.innerHTML = showFull ? "Close Reel" : "Play Reel";
+});
+
+let talkText = document.querySelector(".talk p");
+cursorEffect(".reel-short");
+cursorEffect(".reel-full");
 navigationEffect();
 textEffect(talkText);
