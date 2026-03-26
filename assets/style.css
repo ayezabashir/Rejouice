@@ -34,11 +34,72 @@ body {
     /* user-select: none; */
 }
 
-#page1 {
-    height: 100vh;
+ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-list-items .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.underline {
+    display: none;
+    height: 1px;
     width: 100%;
-    background: #c2a5a5;
+    background-color: #fff;
+}
+
+.talk{
+    width: 90px;
+    overflow: hidden;
+}
+.talk p{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    transform: translate(-18px);
+    cursor: pointer;
+}
+
+.talk span {
+    text-wrap: nowrap;
+}
+
+#page1 {
+    height: 90svh;
+    width: 100%;
+    background: #000;
     position: relative;
+}
+
+#page1-content {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.taglines {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 3vw;
 }
 
 #cursor {
@@ -47,49 +108,47 @@ body {
     border-radius: 50%;
     background-color: #ff5f38;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(-50%,-50%);
 }
 
-#cursor h5{
+#cursor h5 {
     font-size: 16px;
 }
 
-#page1 video {
+#page2 video {
     height: 100%;
     width: 100%;
+    z-index: 1;
     object-fit: cover;
     position: absolute;
 }
 
-#page1-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    /* background-color: #000000; */
-    position: relative;
-    z-index: 2;
-    color: #fff;
-}
-
 nav {
-    /* height: 100px; */
+    height: 6.2rem;
     width: 100%;
-    /* background: rebeccapurple; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 3vw;
+    color: #fff;
 }
 
 nav h3 {
     font-size: 1.15vw;
+}
+
+.nav-list-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-list-items .item.active {
+    color: gray;
 }
 
 #page1-content svg {
@@ -97,7 +156,7 @@ nav h3 {
     padding: 3vw;
 }
 
-#page2{
+#page2 {
     width: 100%;
     height: 100vh;
 }
