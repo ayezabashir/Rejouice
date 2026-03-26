@@ -1,16 +1,28 @@
-const logoTl = gsap.timeline();
-logoTl.from(".letter", {
-  stagger: -0.09,
-  y: -100,
-  opacity: 0,
-  scrollTrigger: {},
+gsap.registerEffect({
+  name: "entranceEffect",
+  effect: (targets, config) => {
+    return gsap.from(targets, {
+      duration: config.duration,
+      stagger: -0.09,
+      y: config.y,
+      opacity: 0,
+    });
+  },
+  defaults: { duration: 0.5, y: -100 },
 });
+
+gsap.effects.entranceEffect(".letter", { duration: 1 });
+gsap.effects.entranceEffect(".item",{y:-20});
+gsap.effects.entranceEffect("nav h3", { y: -20 });
+gsap.effects.entranceEffect(".talk", { y: -20 });
+gsap.effects.entranceEffect(".taglines", { y: -50 });
 
 function cursorEffect() {
   const page1Content = document.getElementById("page2");
   const cursor = document.getElementById("cursor");
 
   page1Content.addEventListener("mousemove", (details) => {
+    cursor.style.display="flex"
     gsap.to(cursor, {
       x: details.clientX,
       y: details.clientY,
@@ -80,13 +92,13 @@ function textEffect(text) {
   text.addEventListener("mouseenter", () => {
     gsap.to(text, {
       duration: 0.3,
-      x:0,
+      x: 0,
     });
   });
   text.addEventListener("mouseleave", () => {
     gsap.to(text, {
       duration: 0.3,
-      x:-18,
+      x: -18,
     });
   });
 }
