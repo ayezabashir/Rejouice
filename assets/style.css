@@ -43,6 +43,12 @@ a {
     color: inherit;
 }
 
+button {
+    outline: none;
+    background: none;
+    border: none;
+}
+
 nav {
     position: fixed;
     z-index: 5;
@@ -61,22 +67,31 @@ nav {
     background-color: #fff;
 }
 
-.talk {
-    width: 90px;
+.talk{
     overflow: hidden;
 }
 
-.talk p {
+.talk p,
+.learnMore p {
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
     transform: translate(-18px);
     cursor: pointer;
 }
 
-.talk span {
+.talk span,
+.learnMore span {
     text-wrap: nowrap;
+    color: #fff;
+    font-weight: 300;
 }
+
+.talk > span:first-child,
+.learnMore > span:first-child {
+    transform: translateY(10px);
+}
+
 
 #page1 {
     height: 90svh;
@@ -156,6 +171,7 @@ nav h3 {
     width: 100%;
     min-height: 100vh;
     background: #000;
+    cursor: pointer;
 }
 
 #cursor {
@@ -200,7 +216,7 @@ nav h3 {
     object-fit: cover;
 }
 
-#page3{
+#page3 {
     min-height: 100vh;
     width: 100%;
     background: #000;
@@ -208,19 +224,42 @@ nav h3 {
     padding: 3vw;
 }
 
-.page3-content{
+.page3-content {
     padding: 4vw 0;
 }
 
-.page3-content h3{
-    font-size: 4vw;
+.page3-content h3 {
     font-weight: 300;
+    font-size: 4vw;
     text-indent: 200px;
     padding-bottom: 50px;
     border-bottom: 1px solid rgb(74, 74, 74);
 }
 
-h3 u{
+.page3-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2vw 0;
+}
+
+.page3-grid p {
+    font-weight: 300;
+    font-size: 20px;
+
+}
+
+.page3-grid .col-2 {
+    width: 360px;
+    line-height: 1.2;
+}
+
+h3 u {
     font-weight: 300;
     text-underline-offset: 15px;
+}
+
+.learnMore {
+    width: 138px;
+    overflow: hidden;
+    margin-left: -8px;
 }

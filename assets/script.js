@@ -89,16 +89,34 @@ function navigationEffect() {
 }
 
 function textEffect(text) {
+  let firstChild = text.querySelector("span");
+  let lastChild = text.querySelector("span:last-of-type");
   text.addEventListener("mouseenter", () => {
     gsap.to(text, {
       duration: 0.3,
-      x: 5,
+      x: 10,
+    });
+    gsap.to(firstChild, {
+      y: 0,
+      duration: 0.3,
+    });
+    gsap.to(lastChild, {
+      y: -10,
+      duration: 0.3,
     });
   });
   text.addEventListener("mouseleave", () => {
     gsap.to(text, {
       duration: 0.3,
       x: -18,
+    });
+    gsap.to(firstChild, {
+      y: 10,
+      duration: 0.3,
+    });
+    gsap.to(lastChild, {
+      y: 0,
+      duration: 0.3,
     });
   });
 }
@@ -150,8 +168,23 @@ playVideo.addEventListener("click", () => {
   }
 });
 
+gsap.from(".page3-content h3", {
+  y: -80,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".page3-content h3",
+    scroll: "body",
+    markers: true,
+    start: "top 60%",
+    end: "top 40%",
+    scrub: 3,
+  },
+});
+
 let talkText = document.querySelector(".talk p");
+let learnMore = document.querySelector(".learnMore p");
 cursorEffect(".reel-short");
 cursorEffect(".reel-full");
 navigationEffect();
 textEffect(talkText);
+textEffect(learnMore);
