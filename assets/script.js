@@ -215,21 +215,15 @@ function caseStudyEffect(container, videoDiv, logo) {
 }
 
 const case1 = document.querySelector(".casestudy_1");
+const case1Vid = document.querySelector(".case1_vid");
+const watermark1 = document.querySelector(".watermark_1");
 const case2 = document.querySelector(".casestudy_2");
+const case2Vid = document.querySelector(".case2_vid");
+const watermark2 = document.querySelector(".watermark_2");
 const case3 = document.querySelector(".casestudy_3");
+const vase3Vid = document.querySelector(".case3_vid");
+const watermark3 = document.querySelector(".watermark_3");
 
-caseStudyEffect(
-  case1,
-  document.querySelector(".case1_vid"),
-  document.querySelector(".watermark_1"),
-);
-caseStudyEffect(
-  case2,
-  document.querySelector(".case2_vid"),
-  document.querySelector(".watermark_2"),
-);
-caseStudyEffect(
-  case3,
-  document.querySelector(".case3_vid"),
-  document.querySelector(".watermark_3"),
-);
+caseStudyEffect(case1, case1Vid, watermark1);
+caseStudyEffect(case2, case2Vid, watermark2);
+caseStudyEffect(case3, vase3Vid, watermark3);
