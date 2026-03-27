@@ -158,38 +158,78 @@ textEffect(document.querySelector(".talk p"));
 textEffect(document.querySelector(".learnMore p"));
 textEffect(document.querySelector(".seeWork p"));
 
-function caseStudyEffect(img, video) {
-  img.addEventListener("mouseover", () => {
-    gsap.to(video, {
+function caseStudyEffect(container, videoDiv, logo) {
+  gsap.set(videoDiv, {
+    scale: 0,
+    xPercent: -50,
+    yPercent: -50,
+    opacity: 0,
+  });
+
+  container.addEventListener("mouseenter", () => {
+    gsap.to(videoDiv, {
       scale: 1,
+      opacity: 1,
       duration: 0.5,
+      ease: "power2.out",
     });
-    gsap.to(img, {
-      duration: 0,
+    gsap.to(container.querySelector("img"), {
       filter: "brightness(0.6)",
-      ease: "power1.out",
+      duration: 0.3,
+    });
+    gsap.to(logo, {
+      scale: 0,
+      duration: 0.3,
     });
   });
-  img.addEventListener("mouseleave", () => {
-    gsap.to(video, {
-      scale: 0,
-      duration: 0.5,
+
+  container.addEventListener("mousemove", (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    gsap.to(videoDiv, {
+      x: x,
+      y: y,
+      duration: 0.6,
+      ease: "power2.out",
     });
-    gsap.to(img, {
-      filter: "none",
-      duration: 0,
-      ease: "power1.out",
+  });
+
+  container.addEventListener("mouseleave", () => {
+    gsap.to(videoDiv, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.in",
+    });
+    gsap.to(container.querySelector("img"), {
+      filter: "brightness(1)",
+      duration: 0.3,
+    });
+    gsap.to(logo, {
+      scale: 1,
+      duration: 0.3,
     });
   });
 }
 
-let caseStudy1 = document.querySelector(".casestudy_1 img");
-let caseStudyVid1 = document.querySelector(".case1_vid");
-let caseStudy2 = document.querySelector(".casestudy_2 img");
-let caseStudyVid2 = document.querySelector(".case2_vid");
-let caseStudy3 = document.querySelector(".casestudy_3 img");
-let caseStudyVid3 = document.querySelector(".case3_vid");
+const case1 = document.querySelector(".casestudy_1");
+const case2 = document.querySelector(".casestudy_2");
+const case3 = document.querySelector(".casestudy_3");
 
-caseStudyEffect(caseStudy1, caseStudyVid1);
-caseStudyEffect(caseStudy2, caseStudyVid2);
-caseStudyEffect(caseStudy3, caseStudyVid3);
+caseStudyEffect(
+  case1,
+  document.querySelector(".case1_vid"),
+  document.querySelector(".watermark_1"),
+);
+caseStudyEffect(
+  case2,
+  document.querySelector(".case2_vid"),
+  document.querySelector(".watermark_2"),
+);
+caseStudyEffect(
+  case3,
+  document.querySelector(".case3_vid"),
+  document.querySelector(".watermark_3"),
+);
