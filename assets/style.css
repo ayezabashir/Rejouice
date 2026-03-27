@@ -29,10 +29,30 @@ html {
     width: 100%;
 }
 
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
 body {
     overflow-x: hidden;
-    /* user-select: none; */
+    user-select: none;
 }
+
 
 ul li {
     list-style-type: none;
@@ -67,7 +87,7 @@ nav {
     background-color: #fff;
 }
 
-.talk{
+.talk {
     overflow: hidden;
 }
 
@@ -87,8 +107,8 @@ nav {
     font-weight: 300;
 }
 
-.talk > span:first-child,
-.learnMore > span:first-child {
+.talk>span:first-child,
+.learnMore>span:first-child {
     transform: translateY(10px);
 }
 
@@ -172,6 +192,7 @@ nav h3 {
     min-height: 100vh;
     background: #000;
     cursor: pointer;
+    position: relative;
 }
 
 #cursor {
@@ -222,6 +243,7 @@ nav h3 {
     background: #000;
     color: #fff;
     padding: 3vw;
+    position: relative;
 }
 
 .page3-content {
