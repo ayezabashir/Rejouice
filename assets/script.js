@@ -155,3 +155,4 @@ cursorEffect();
 navigationEffect();
 textEffect(document.querySelector(".talk p"));
 textEffect(document.querySelector(".learnMore p"));
+textEffect(document.querySelector(".seeWork p"));

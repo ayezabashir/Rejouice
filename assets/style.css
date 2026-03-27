@@ -111,7 +111,8 @@ nav {
 }
 
 .talk p,
-.learnMore p {
+.learnMore p,
+.seeWork p {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -120,14 +121,16 @@ nav {
 }
 
 .talk span,
-.learnMore span {
+.learnMore span,
+.seeWork span {
     text-wrap: nowrap;
     color: #fff;
     font-weight: 300;
 }
 
 .talk>span:first-child,
-.learnMore>span:first-child {
+.learnMore>span:first-child,
+.seeWork>span:first-child {
     transform: translateY(10px);
 }
 
@@ -308,6 +311,12 @@ h3 u {
     overflow: hidden;
     margin-left: -8px;
 }
+ .seeWork {
+    font-size: 18px;
+     width: 150px;
+     overflow: hidden;
+     margin-left: -8px;
+ }
 
 #page3-elements {
     display: flex;
@@ -317,6 +326,13 @@ h3 u {
     padding: 200px 0;
 }
 
+#page3-elements .headline{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .casestudies {
     display: flex;
     justify-content: space-between;
