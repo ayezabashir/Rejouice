@@ -48,6 +48,21 @@ html.has-scroll-dragging {
     min-height: 100vh;
 }
 
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
 body {
     overflow-x: hidden;
     user-select: none;
@@ -196,15 +211,17 @@ nav h3 {
 }
 
 #cursor {
-    height: 7.5vw;
-    width: 7.5vw;
-    border-radius: 50%;
+    height: 100px;
+    width: 100px;
     background-color: #ff5f38;
+    border-radius: 50%;
     position: fixed;
-    z-index: 3;
-    display: none;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transform: translate(-50%, -50%);
+    scale: 0;
 }
 
 #cursor h5 {
@@ -216,17 +233,18 @@ nav h3 {
     width: 100%;
     z-index: 1;
     object-fit: cover;
-    position: absolute;
+    position: relative;
 }
 
 .reel-full {
     display: none;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    z-index: 90;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
+    background: #000;
     justify-content: center;
     align-items: center;
 }
@@ -235,6 +253,7 @@ nav h3 {
     height: 80%;
     width: 80%;
     object-fit: cover;
+    pointer-events: none;
 }
 
 #page3 {
