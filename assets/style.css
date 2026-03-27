@@ -84,6 +84,10 @@ button {
     border: none;
 }
 
+img {
+    width: 100%;
+}
+
 nav {
     position: fixed;
     z-index: 5;
@@ -303,4 +307,53 @@ h3 u {
     width: 138px;
     overflow: hidden;
     margin-left: -8px;
+}
+
+#page3-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200px 0;
+}
+
+.casestudies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.casestudy_1,
+.casestudy_2,
+.casestudy_3 {
+    position: relative;
+    cursor: pointer;
+}
+
+.watermark_1,
+.watermark_2,
+.watermark_3 {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.watermark img {
+    width: 100px;
+}
+
+.casestudy_2,
+.casestudy_3 {
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.casestudy_2 img,
+.casestudy_3 img {
+    object-fit: cover;
 }

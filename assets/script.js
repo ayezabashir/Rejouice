@@ -62,7 +62,7 @@ let fullVideo = fullReel.querySelector("video");
 playZone.addEventListener("click", () => {
   fullReel.style.display = "flex";
   fullVideo.play();
-  fullVideo.muted = false; 
+  fullVideo.muted = false;
 
   gsap.fromTo(
     fullReel,
