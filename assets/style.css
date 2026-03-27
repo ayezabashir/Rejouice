@@ -338,7 +338,8 @@ h3 u {
     gap: 50px;
     width: 100%;
 }
-.casestudy_1{
+
+.casestudy_1 {
     margin-bottom: 50px;
 }
 
@@ -404,4 +405,27 @@ h3 u {
 .case3_vid video {
     object-fit: cover;
     flex-grow: 1;
+}
+
+#page4 {
+    padding: 3vw;
+    position: relative;
+}
+
+#page4_content {
+    padding: 12rem 0;
+}
+
+.company_logos{
+    display: flex;justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.c_logo {
+    width: 100px;
+}
+
+.c_logo_big{
+    width: 65px
 }
