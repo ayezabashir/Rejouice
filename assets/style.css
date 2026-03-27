@@ -311,12 +311,13 @@ h3 u {
     overflow: hidden;
     margin-left: -8px;
 }
- .seeWork {
+
+.seeWork {
     font-size: 18px;
-     width: 150px;
-     overflow: hidden;
-     margin-left: -8px;
- }
+    width: 150px;
+    overflow: hidden;
+    margin-left: -8px;
+}
 
 #page3-elements {
     display: flex;
@@ -326,13 +327,14 @@ h3 u {
     padding: 200px 0;
 }
 
-#page3-elements .headline{
+#page3-elements .headline {
     width: 100%;
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .casestudies {
     display: flex;
     justify-content: space-between;
@@ -372,4 +374,25 @@ h3 u {
 .casestudy_2 img,
 .casestudy_3 img {
     object-fit: cover;
+}
+
+.case1_vid,
+.case2_vid,
+.case3_vid {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    scale: 0;
+}
+
+
+.case1_vid video,
+.case2_vid video,
+.case3_vid video {
+    object-fit: cover;
+    flex-grow: 1;
 }

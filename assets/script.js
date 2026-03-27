@@ -142,6 +142,7 @@ gsap.effects.entranceEffect(".taglines", { y: -50 });
 
 gsap.from(".page3-content h3", {
   y: 120,
+  opacity: 0,
   scrollTrigger: {
     trigger: ".page3-content h3",
     scroller: "#main",
@@ -156,3 +157,39 @@ navigationEffect();
 textEffect(document.querySelector(".talk p"));
 textEffect(document.querySelector(".learnMore p"));
 textEffect(document.querySelector(".seeWork p"));
+
+function caseStudyEffect(img, video) {
+  img.addEventListener("mouseover", () => {
+    gsap.to(video, {
+      scale: 1,
+      duration: 0.5,
+    });
+    gsap.to(img, {
+      duration: 0,
+      filter: "brightness(0.6)",
+      ease: "power1.out",
+    });
+  });
+  img.addEventListener("mouseleave", () => {
+    gsap.to(video, {
+      scale: 0,
+      duration: 0.5,
+    });
+    gsap.to(img, {
+      filter: "none",
+      duration: 0,
+      ease: "power1.out",
+    });
+  });
+}
+
+let caseStudy1 = document.querySelector(".casestudy_1 img");
+let caseStudyVid1 = document.querySelector(".case1_vid");
+let caseStudy2 = document.querySelector(".casestudy_2 img");
+let caseStudyVid2 = document.querySelector(".case2_vid");
+let caseStudy3 = document.querySelector(".casestudy_3 img");
+let caseStudyVid3 = document.querySelector(".case3_vid");
+
+caseStudyEffect(caseStudy1, caseStudyVid1);
+caseStudyEffect(caseStudy2, caseStudyVid2);
+caseStudyEffect(caseStudy3, caseStudyVid3);
