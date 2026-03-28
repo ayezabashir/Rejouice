@@ -416,8 +416,9 @@ h3 u {
     padding: 12rem 0;
 }
 
-.company_logos{
-    display: flex;justify-content: space-between;
+.company_logos {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
@@ -426,6 +427,98 @@ h3 u {
     width: 100px;
 }
 
-.c_logo_big{
+.c_logo_big {
     width: 65px
+}
+
+.animatedBorder {
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+}
+
+.widgets_wrapper .headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.widgets_wrapper .headline p {
+    font-weight: 300;
+    font-size: 20px;
+    padding: 0 3vw;
+}
+
+#page5 {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+#swiperSection {
+    min-height: 60vh;
+    width: 100%;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    border-radius: 8px;
+    width: 450px !important;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slide_one {
+    background: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 30px 50px;
+    justify-content: space-between;
+}
+
+.slide_one .top_section {
+    text-align: start;
+    line-height: 0.8;
+}
+
+.slide_one .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;width: 100%;
+}
+
+.slide_one .bottom-section img{
+    width: 80px
+}
+
+.swiper p {
+    font-weight: 300;
+}
+
+.text-gray {
+    color: gray;
 }

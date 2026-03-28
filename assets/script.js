@@ -143,11 +143,12 @@ gsap.effects.entranceEffect(".taglines", { y: -50 });
 gsap.from(".page3-content h3", {
   y: 120,
   opacity: 0,
+  duration: 0.5,
   scrollTrigger: {
     trigger: ".page3-content h3",
     scroller: "#main",
-    start: "top 40%",
-    end: "top 37%",
+    start: "top 50%",
+    end: "top 45%",
     scrub: 2,
   },
 });
@@ -227,3 +228,30 @@ const watermark3 = document.querySelector(".watermark_3");
 caseStudyEffect(case1, case1Vid, watermark1);
 caseStudyEffect(case2, case2Vid, watermark2);
 caseStudyEffect(case3, vase3Vid, watermark3);
+
+const animatedBorder = document.querySelector(".animatedBorder");
+gsap.from(animatedBorder, {
+  width:0,
+  duration: 0.2,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: animatedBorder,
+    scrub:2,
+    start: "top 80%",
+    end: "top 78%"
+  }
+})
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
