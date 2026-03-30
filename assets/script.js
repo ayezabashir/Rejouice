@@ -231,16 +231,16 @@ caseStudyEffect(case3, vase3Vid, watermark3);
 
 const animatedBorder = document.querySelector(".animatedBorder");
 gsap.from(animatedBorder, {
-  width:0,
+  width: 0,
   duration: 0.2,
   scrollTrigger: {
     scroller: "#main",
     trigger: animatedBorder,
-    scrub:2,
+    scrub: 2,
     start: "top 80%",
-    end: "top 78%"
-  }
-})
+    end: "top 78%",
+  },
+});
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -255,3 +255,28 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+const usa_time = document.querySelector(".usa_time");
+const france_time = document.querySelector(".france_time");
+
+const parisFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "Europe/Paris",
+  dateStyle: "short",
+  timeStyle: "medium",
+});
+
+const sdFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Los_Angeles",
+  dateStyle: "short",
+  timeStyle: "medium",
+});
+
+function timerFun() {
+  const now = new Date();
+
+  if (france_time) france_time.textContent = parisFormatter.format(now);
+  if (usa_time) usa_time.textContent = sdFormatter.format(now);
+}
+
+timerFun();
+const myInterval = setInterval(timerFun, 1000);

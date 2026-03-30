@@ -490,7 +490,8 @@ h3 u {
     margin-right: auto;
 }
 
-.slide_one {
+.slide_one,
+.slide_two {
     background: #F7F7F7;
     display: flex;
     flex-direction: column;
@@ -508,10 +509,11 @@ h3 u {
 .slide_one .bottom-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;width: 100%;
+    align-items: center;
+    width: 100%;
 }
 
-.slide_one .bottom-section img{
+.slide_one .bottom-section img {
     width: 80px
 }
 
@@ -521,4 +523,55 @@ h3 u {
 
 .text-gray {
     color: gray;
+}
+
+.slide_two .top_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+}
+
+.slide_two {
+    gap: 50px;
+}
+
+.slide_two .time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: gray;
+}
+
+.slide_two .clock {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.time_needles {
+    position: absolute;
+    top: 50%;
+}
+
+.hour_needle {
+    width: 40px;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    right: 0;
+}
+
+.time_needles .needle_seconds {
+    width: 80px;
+    height: 2px;
+    background: black;
+}
+
+.time_needles needle_minutes {
+    width: 80px;
+    height: 2px;
+    background: black;
 }
