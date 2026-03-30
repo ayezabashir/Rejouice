@@ -534,7 +534,7 @@ h3 u {
     color: gray;
 }
 
-.text-white{
+.text-white {
     color: white;
 }
 
@@ -607,15 +607,55 @@ h3 u {
     line-height: 1.5;
 }
 
-.slide_three .bottom-section{
+.slide_three .bottom-section {
     align-self: flex-end;
 }
 
-.slide_three .bottom-section img{
+.slide_three .bottom-section img {
     height: 20px;
     display: none;
 }
 
-.slide_three .bottom-section .active{
-    display: block
+.slide_three .bottom-section .active {
+    display: block;
+    animation: fadeIn 0.1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slide_four {
+    background-image: url("/assets/images/oura-abdul-ovaice-3d-cd-031.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.slide_four .slide_content {
+    text-align: start;
+    padding: 20px;
+    color: white;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide_content p {
+    margin: 0;
+    line-height: 1.2;
+    transition: opacity 0.5s ease;
 }

@@ -256,6 +256,25 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+let swiperAnimation = () => {
+  const mySwiper = document.querySelector("#swiperSection");
+  gsap.from(mySwiper, {
+    y: 50,
+    x: -50,
+    skewY: 5,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: mySwiper,
+      scroller: "#main",
+      start: "top 35%",
+      end: "top 45%",
+      scrub: 2,
+      markers: true,
+    },
+  });
+};
+
+swiperAnimation();
 const usa_time = document.querySelector(".usa_time");
 const france_time = document.querySelector(".france_time");
 
@@ -349,3 +368,35 @@ setInterval(() => {
   slide_3_img[currentIndex].classList.add("active");
   currentIndex = (currentIndex + 1) % slide_3_img.length;
 }, 1000);
+
+const slideContent = document.querySelector(".slide_content");
+const paragraphs = gsap.utils.toArray(".slide_content p");
+
+function updateOpacities() {
+  const currentParas = document.querySelectorAll(".slide_content p");
+  currentParas.forEach((p, i) => {
+    if (i === 0) p.style.opacity = "1";
+    else if (i === 1) p.style.opacity = "0.66";
+    else if (i === 2) p.style.opacity = "0.46";
+    else p.style.opacity = "0";
+  });
+}
+
+updateOpacities();
+
+function scrollText() {
+  const firstItem = slideContent.querySelector("p");
+  const itemHeight = firstItem.offsetHeight + 10; 
+
+  gsap.to(slideContent, {
+    y: -itemHeight,
+    duration: 0.5,
+    ease: "power2.inOut",
+    onComplete: () => {
+      slideContent.appendChild(firstItem);
+      gsap.set(slideContent, { y: 0 });
+      updateOpacities();
+    },
+  });
+}
+setInterval(scrollText, 1000);
