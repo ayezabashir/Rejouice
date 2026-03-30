@@ -412,3 +412,29 @@ function scrollText() {
   });
 }
 setInterval(scrollText, 1000);
+const slide_eight = document.querySelector(".slide_eight");
+const slide_eight_bottom = document.querySelector(
+  ".slide_eight .bottom-section",
+);
+
+slide_eight.addEventListener("mouseenter", () => {
+  gsap.to(slide_eight_bottom, {
+    display: "block", 
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+});
+
+slide_eight.addEventListener("mouseleave", () => {
+  gsap.to(slide_eight_bottom, {
+    opacity: 0,
+    y: 20, 
+    duration: 0.4,
+    ease: "power2.in",
+    onComplete: () => {
+      gsap.set(slide_eight_bottom, { display: "none" });
+    },
+  });
+});

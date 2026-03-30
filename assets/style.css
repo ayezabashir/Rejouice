@@ -493,7 +493,8 @@ h3 u {
 .slide_one,
 .slide_two,
 .slide_three,
-.slide_five {
+.slide_five,
+.slide_eight {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -505,7 +506,8 @@ h3 u {
 .slide_one,
 .slide_two,
 .slide_five,
-.slide_six {
+.slide_six,
+.slide_eight {
     background: #F7F7F7;
 }
 
@@ -696,10 +698,22 @@ h3 u {
     padding: 20px;
 }
 
-.slide_seven .top_section {
+.slide_seven .top_section,
+.slide_eight {
     text-align: start;
+    font-size: 20px;
 }
 
-.slide_seven .learnMore{
+.slide_seven .learnMore {
     font-size: 20px;
+}
+.slide_eight {
+    height: 300px;
+}
+.slide_eight .bottom-section{
+    width: 100%;
+    display: none;
+}
+.slide_eight .bottom-section p{
+    text-align: end;
 }
