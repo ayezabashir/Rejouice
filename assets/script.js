@@ -271,12 +271,12 @@ const sdFormatter = new Intl.DateTimeFormat("en-US", {
   timeStyle: "medium",
 });
 
-function timerFun() {
+function displayTime() {
   const now = new Date();
 
   if (france_time) france_time.textContent = parisFormatter.format(now);
   if (usa_time) usa_time.textContent = sdFormatter.format(now);
 }
 
-timerFun();
-const myInterval = setInterval(timerFun, 1000);
+displayTime();
+const myInterval = setInterval(displayTime, 1000);

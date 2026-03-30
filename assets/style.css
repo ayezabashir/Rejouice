@@ -545,7 +545,7 @@ h3 u {
     color: gray;
 }
 
-.slide_two .clock {
+.clock {
     width: 80%;
     margin: 0 auto;
     position: relative;
@@ -553,25 +553,30 @@ h3 u {
 
 .time_needles {
     position: absolute;
+    top: 0;
+}
+
+.needle {
+    position: absolute;
     top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    background: #000;
 }
 
 .hour_needle {
-    width: 40px;
-    height: 2px;
-    background: lightgray;
-    position: absolute;
-    right: 0;
+    height: 50px;
+    background: gray;
 }
 
-.time_needles .needle_seconds {
-    width: 80px;
-    height: 2px;
-    background: black;
+.hour_needle_paris,
+.hour_needle_sandiego {
+    transform: translate(140px, 182%) rotate(0deg);
 }
 
-.time_needles needle_minutes {
-    width: 80px;
-    height: 2px;
-    background: black;
+.needle_seconds,
+.needle_minutes{
+    transform: translate(140px, 117%) rotate(0deg);
 }
