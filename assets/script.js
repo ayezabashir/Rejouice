@@ -158,6 +158,7 @@ navigationEffect();
 textEffect(document.querySelector(".talk p"));
 textEffect(document.querySelector(".learnMore p"));
 textEffect(document.querySelector(".seeWork p"));
+textEffect(document.querySelector(".slide_seven .learnMore p"));
 
 function caseStudyEffect(container, videoDiv, logo) {
   gsap.set(videoDiv, {

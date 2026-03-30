@@ -504,11 +504,13 @@ h3 u {
 
 .slide_one,
 .slide_two,
-.slide_five {
+.slide_five,
+.slide_six {
     background: #F7F7F7;
 }
 
-.slide_three {
+.slide_three,
+.slide_seven {
     background: black;
 }
 
@@ -664,4 +666,40 @@ h3 u {
     margin: 0;
     line-height: 1.2;
     transition: opacity 0.5s ease;
+}
+
+.slide_six {
+    height: 500px;
+    width: 100%;
+    background-image: url("/assets/images/pergola-module-floor.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.slide_six .text-white {
+    opacity: 0.8;
+}
+
+.slide_seven {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.slide_seven .top_section {
+    text-align: start;
+}
+
+.slide_seven .learnMore{
+    font-size: 20px;
 }
