@@ -259,12 +259,12 @@ var swiper = new Swiper(".mySwiper", {
 const usa_time = document.querySelector(".usa_time");
 const france_time = document.querySelector(".france_time");
 
-const parisFormatter = new Intl.DateTimeFormat("en-US", {
+const parisFormat = new Intl.DateTimeFormat("en-US", {
   timeZone: "Europe/Paris",
   timeStyle: "medium",
 });
 
-const sdFormatter = new Intl.DateTimeFormat("en-US", {
+const sdFormat = new Intl.DateTimeFormat("en-US", {
   timeZone: "America/Los_Angeles",
   timeStyle: "medium",
 });
@@ -272,8 +272,8 @@ const sdFormatter = new Intl.DateTimeFormat("en-US", {
 function displayTime() {
   const now = new Date();
 
-  if (france_time) france_time.textContent = parisFormatter.format(now);
-  if (usa_time) usa_time.textContent = sdFormatter.format(now);
+  if (france_time) france_time.textContent = parisFormat.format(now);
+  if (usa_time) usa_time.textContent = sdFormat.format(now);
 }
 
 displayTime();
@@ -284,3 +284,55 @@ const needle_paris = document.querySelector(".hour_needle_paris");
 const needle_sandiego = document.querySelector(".hour_needle_sandiego");
 const needle_seconds = document.querySelector(".needle_seconds");
 const needle_minutes = document.querySelector(".needle_minutes");
+const minuteFormatter = new Intl.DateTimeFormat("en-US", {
+  minute: "2-digit",
+});
+
+const secondFormatter = new Intl.DateTimeFormat("en-US", {
+  second: "2-digit",
+});
+
+const parisFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "Europe/Paris",
+  hour: "2-digit",
+});
+
+const sdFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Los_Angeles",
+  hour: "2-digit",
+});
+
+function clockStyle() {
+  const now = new Date();
+  let currMinute = now.getMinutes();
+  let currSecond = now.getSeconds();
+
+  let parisHour =
+    parseInt(
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Paris",
+        hour: "numeric",
+        hour12: false,
+      }).format(now),
+    ) % 12;
+
+  let sdHour =
+    parseInt(
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Los_Angeles",
+        hour: "numeric",
+        hour12: false,
+      }).format(now),
+    ) % 12;
+
+  needle_paris.style.transform = `translateX(-50%) rotate(${scale(parisHour, 0, 12, 0, 360)}deg)`;
+  needle_sandiego.style.transform = `translateX(-50%) rotate(${scale(sdHour, 0, 12, 0, 360)}deg)`;
+  needle_minutes.style.transform = `translateX(-50%) rotate(${scale(currMinute, 0, 60, 0, 360)}deg)`;
+  needle_seconds.style.transform = `translateX(-50%) rotate(${scale(currSecond, 0, 60, 0, 360)}deg)`;
+}
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
+clockStyle();
+setInterval(clockStyle, 1000);
