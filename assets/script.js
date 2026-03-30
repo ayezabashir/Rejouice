@@ -336,3 +336,16 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 };
 clockStyle();
 setInterval(clockStyle, 1000);
+
+const slide_3_img = document.querySelectorAll(
+  ".slide_three .bottom-section img",
+);
+let currentIndex = 0;
+
+setInterval(() => {
+  slide_3_img.forEach((img) => {
+    img.classList.remove("active");
+  });
+  slide_3_img[currentIndex].classList.add("active");
+  currentIndex = (currentIndex + 1) % slide_3_img.length;
+}, 1000);
