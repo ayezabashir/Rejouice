@@ -261,13 +261,11 @@ const france_time = document.querySelector(".france_time");
 
 const parisFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "Europe/Paris",
-  dateStyle: "short",
   timeStyle: "medium",
 });
 
 const sdFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "America/Los_Angeles",
-  dateStyle: "short",
   timeStyle: "medium",
 });
 
@@ -279,4 +277,10 @@ function displayTime() {
 }
 
 displayTime();
-const myInterval = setInterval(displayTime, 1000);
+const timerId = setInterval(displayTime, 1000);
+
+// move needles
+const needle_paris = document.querySelector(".hour_needle_paris");
+const needle_sandiego = document.querySelector(".hour_needle_sandiego");
+const needle_seconds = document.querySelector(".needle_seconds");
+const needle_minutes = document.querySelector(".needle_minutes");

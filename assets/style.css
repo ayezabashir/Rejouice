@@ -555,6 +555,9 @@ h3 u {
     position: absolute;
     top: 0;
 }
+.time:hover{
+    color: black;
+}
 
 .needle {
     position: absolute;
