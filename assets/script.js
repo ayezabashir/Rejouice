@@ -421,29 +421,18 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 clockStyle();
 setInterval(clockStyle, 1000);
 
-const slide_3_img = document.querySelectorAll(
-  ".slide_three .bottom-section img",
-);
-const slide_5_img = document.querySelectorAll(
-  ".slide_five .bottom-section img",
-);
-let currentIndex = 0;
+function setupCarousel(imageSelector, speed = 1000) {
+  const images = document.querySelectorAll(imageSelector);
+  let index = 0;
+  setInterval(() => {
+    images.forEach((img) => img.classList.remove("active"));
+    images[index].classList.add("active");
+    index = (index + 1) % images.length;
+  }, speed);
+}
 
-setInterval(() => {
-  slide_3_img.forEach((img) => {
-    img.classList.remove("active");
-  });
-  slide_3_img[currentIndex].classList.add("active");
-  currentIndex = (currentIndex + 1) % slide_3_img.length;
-}, 1000);
-
-setInterval(() => {
-  slide_5_img.forEach((img) => {
-    img.classList.remove("active");
-  });
-  slide_5_img[currentIndex].classList.add("active");
-  currentIndex = (currentIndex + 1) % slide_5_img.length;
-}, 1000);
+setupCarousel(".slide_three .bottom-section img");
+setupCarousel(".slide_five .bottom-section img");
 
 const slideContent = document.querySelector(".slide_content");
 const paragraphs = gsap.utils.toArray(".slide_content p");
