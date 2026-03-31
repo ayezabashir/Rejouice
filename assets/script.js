@@ -244,17 +244,25 @@ gsap.from(animatedBorder, {
 });
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
+  slidesPerView: 3,
+  spaceBetween: 20,
   loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  speed: 5000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  freeMode: true,
+});
+
+const swiperContainer = document.querySelector(".mySwiper");
+
+swiperContainer.addEventListener("mouseenter", () => {
+  swiper.autoplay.stop();
+});
+
+swiperContainer.addEventListener("mouseleave", () => {
+  swiper.autoplay.start();
 });
 
 let swiperAnimation = () => {

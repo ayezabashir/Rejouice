@@ -478,6 +478,10 @@ h3 u {
     align-items: center;
 }
 
+.mySwiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
 .swiper-slide img {
     display: block;
     width: 100%;
@@ -758,15 +762,15 @@ h3 u {
     font-size: 20px;
 }
 
-.slide_nine_content .top-section p em{
+.slide_nine_content .top-section p em {
     opacity: 0.8;
     font-weight: 300;
 }
 
-.slide_nine_content .bottom-section{
+.slide_nine_content .bottom-section {
     align-self: flex-end;
 }
 
-.slide_nine_content .bottom-section img{
+.slide_nine_content .bottom-section img {
     width: 100px;
 }
