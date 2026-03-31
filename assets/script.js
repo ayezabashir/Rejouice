@@ -30,6 +30,74 @@ function locomotiveScroll() {
 }
 locomotiveScroll();
 
+var tl = gsap.timeline();
+tl.from("#loader h3", {
+  x: 40,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.1,
+});
+
+tl.to("#loader h3", {
+  opacity: 0,
+  x: -40,
+  stagger: 0.1,
+  duration: 1,
+});
+
+tl.to("#loader", {
+  opacity: 0,
+});
+
+tl.to("#loader", {
+  display: "none",
+});
+
+tl.from("#page1", {
+  y: "-100%",
+  duration: 0.5,
+},"<");
+
+tl.from(
+  "#page2",
+  {
+    opacity: 0,
+    backgroundColor: "white",
+  },
+  "<",
+);
+
+tl.from(
+  "#page1-content",
+  {
+    opacity: 0,
+    y: 150,
+    duration: 0.6,
+  },
+  "<",
+);
+
+tl.from(".letter", {
+  opacity: 0,
+  y: -50,
+  duration: 0.4,
+  stagger: -0.15,
+});
+
+tl.from(
+  ".item, nav h3, .talk",
+  {
+    opacity: 0,
+    y: -20,
+  },
+  "<",
+);
+
+tl.from(".hero-foot", {
+  y: 100,
+  opacity: 0,
+});
+
 const cursor = document.getElementById("cursor");
 
 function cursorEffect() {
@@ -122,23 +190,6 @@ function textEffect(text) {
     gsap.to(lastChild, { y: 0, duration: 0.3 });
   });
 }
-
-gsap.registerEffect({
-  name: "entranceEffect",
-  effect: (targets, config) => {
-    return gsap.from(targets, {
-      duration: config.duration,
-      stagger: -0.09,
-      y: config.y,
-      opacity: 0,
-    });
-  },
-  defaults: { duration: 0.5, y: -100 },
-});
-
-gsap.effects.entranceEffect(".letter", { duration: 1 });
-gsap.effects.entranceEffect(".item, nav h3, .talk", { y: -20 });
-gsap.effects.entranceEffect(".taglines", { y: -50 });
 
 gsap.from(".page3-content h3", {
   y: 120,

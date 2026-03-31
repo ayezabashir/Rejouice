@@ -84,6 +84,27 @@ button {
     border: none;
 }
 
+#loader {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#loader h3 {
+    font-size: 2vw;
+}
+
+#loader h3 sup {
+    font-size: 12px;
+}
+
 nav {
     position: fixed;
     z-index: 5;
