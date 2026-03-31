@@ -118,13 +118,17 @@ button {
     background-color: #fff;
 }
 
-.talk {
+.talk,
+.social_one,
+.social_two {
     overflow: hidden;
 }
 
 .talk p,
 .learnMore p,
-.seeWork p {
+.seeWork p,
+.social_one p,
+.social_two p {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -134,15 +138,29 @@ button {
 
 .talk span,
 .learnMore span,
-.seeWork span {
+.seeWork span,
+.social_one span,
+.social_two span {
     text-wrap: nowrap;
     color: #fff;
+}
+
+.learnMore span,
+.seeWork span {
     font-weight: 300;
+}
+
+.talk span,
+.social_one span,
+.social_two span {
+    font-weight: 400;
 }
 
 .talk>span:first-child,
 .learnMore>span:first-child,
-.seeWork>span:first-child {
+.seeWork>span:first-child,
+.social_one>span:first-child,
+.social_two>span:first-child {
     transform: translateY(10px);
 }
 
@@ -856,4 +874,93 @@ h3 u {
     top: 92%;
     transform-origin: center center;
     pointer-events: none;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+}
+
+.footer {
+    padding: 3vw;
+}
+
+.footer .top_section {
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.footer .top_section .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.footer .top_section h2 {
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.footer .top_section .left .feild {
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.footer .top_section .left .feild button {
+    color: gray;
+    font-size: 14px;
+}
+
+.footer .top_section .left .feild input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+.footer .top_section .right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.footer .top_section .right button p {
+    color: white;
+}
+
+.footer .top_section .right .links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.right .links ul li,
+.locations p,
+.copyright p {
+    font-size: 14px;
+}
+
+.footer .top_section .right .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

@@ -214,6 +214,8 @@ textEffect(document.querySelector(".talk p"));
 textEffect(document.querySelector(".learnMore p"));
 textEffect(document.querySelector(".seeWork p"));
 textEffect(document.querySelector(".slide_seven .learnMore p"));
+textEffect(document.querySelector(".social_one p"));
+textEffect(document.querySelector(".social_two p"));
 
 function caseStudyEffect(container, videoDiv, logo) {
   gsap.set(videoDiv, {
@@ -586,4 +588,28 @@ contactHover.addEventListener("mouseleave", () => {
     right: "36%",
     width: "338px",
   });
+});
+
+const footer = document.querySelector(".footer");
+gsap.from(footer, {
+  y: "-30%",
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: ".footer",
+    start: "top 40%",
+    end: "top 36%",
+    scrub: 5,
+  },
+});
+
+gsap.from(".footer_letter", {
+  opacity: 0,
+  y: -50,
+  duration: 0.4,
+  stagger: -0.15,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: ".footer_letter",
+    start: "bottom 60%",
+  },
 });
