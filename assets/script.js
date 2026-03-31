@@ -53,10 +53,14 @@ tl.to("#loader", {
   display: "none",
 });
 
-tl.from("#page1", {
-  y: "-100%",
-  duration: 0.5,
-},"<");
+tl.from(
+  "#page1",
+  {
+    y: "-100%",
+    duration: 0.5,
+  },
+  "<",
+);
 
 tl.from(
   "#page2",
@@ -533,5 +537,53 @@ slide_nine.addEventListener("mouseleave", () => {
     onComplete: () => {
       slide_nine_vid.pause();
     },
+  });
+});
+
+const portfolioVid = document.querySelector(".portfolio-vid");
+gsap.fromTo(
+  portfolioVid,
+  {
+    scale: 0.4,
+  },
+  {
+    scale: 1,
+    scrollTrigger: {
+      trigger: ".portfolio-loop",
+      scroller: "#main",
+      start: "top 70%",
+      end: "top 20%",
+      scrub: 2,
+    },
+  },
+);
+
+const contactHover = document.querySelector(".contact");
+contactHover.addEventListener("mouseenter", () => {
+  gsap.fromTo(
+    ".contact h3",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      y: -110,
+      duration: 0.5,
+    },
+  );
+  gsap.to(".contact .line", {
+    width: "220px",
+    right: "41%",
+  });
+});
+
+contactHover.addEventListener("mouseleave", () => {
+  gsap.to(".contact h3", {
+    y: 0,
+    duration: 0.5,
+  });
+  gsap.to(".contact .line", {
+    right: "36%",
+    width: "338px",
   });
 });
