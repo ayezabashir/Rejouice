@@ -602,3 +602,45 @@ gsap.from(".footer_letter", {
     start: "bottom 60%",
   },
 });
+const menuBtn = document.querySelector(".menuBtn");
+const mbMenuItems = document.querySelector(".mbMenuItems");
+
+const menuTl = gsap.timeline({ paused: true });
+
+menuTl.to(mbMenuItems, {
+  display: "flex",
+  height: "100%",
+  opacity: 1,
+  duration: 0.5,
+  ease: "power2.out",
+});
+
+menuTl.fromTo(
+  ".mb-list-items li",
+  {
+    opacity: 0,
+    y: 30,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    stagger: 0.1,
+    duration: 0.4,
+    ease: "back.out(1.7)",
+  },
+  "-=0.2",
+);
+
+let menuIsOpen = false;
+
+menuBtn.addEventListener("click", () => {
+  if (!menuIsOpen) {
+    menuTl.play();
+    menuBtn.innerHTML = "Close";
+    menuIsOpen = true;
+  } else {
+    menuTl.reverse();
+    menuBtn.innerHTML = "Menu";
+    menuIsOpen = false;
+  }
+});

@@ -964,3 +964,73 @@ input::placeholder {
     flex-direction: column;
     gap: 5px;
 }
+
+.menuBtn {
+    display: none;
+}
+
+.mbMenuItems{
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .menuBtn {
+        display: block;
+        color: white;
+        background-color: #333333;
+        padding: 10px 30px;
+    }
+
+    .nav-list-items,
+    .desktop .talk {
+        display: none;
+    }
+
+    nav {
+        width: 100vw;
+    }
+
+    .hero-content {
+        padding-top: 10vw;
+    }
+
+    .mbMenuItems {
+        position: absolute;
+        top: 8%;
+        height: 100%;
+        right: 0;
+        width: 100%;
+        background: #000;
+        color: #fff;
+        z-index: 9;
+        padding: 3vw;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mb-list-items {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-top: 50px;
+    }
+
+    .mb-list-items a {
+        font-size: 7vw;
+        font-weight: 300;
+    }
+
+    .mb-list-items .active {
+        color: gray;
+    }
+
+    .mbMenuItems .talk {
+        width: 100px;
+    }
+
+    .mbMenuItems .talk p span {
+        color: #fff;
+    }
+}
