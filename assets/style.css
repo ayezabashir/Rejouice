@@ -868,7 +868,7 @@ h3 u {
 .contact .line {
     position: absolute;
     height: 2px;
-    width: 338px;
+    width: 28%;
     background: #000;
     right: 36%;
     top: 92%;
@@ -902,7 +902,7 @@ footer {
 }
 
 .footer .top_section h2 {
-    font-size: 3vw;
+    font-size: 30px;
     font-weight: 300;
 }
 
@@ -969,8 +969,12 @@ input::placeholder {
     display: none;
 }
 
-.mbMenuItems{
+.mbMenuItems {
     display: none;
+}
+
+footer {
+    overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
@@ -990,13 +994,30 @@ input::placeholder {
         width: 100vw;
     }
 
+    nav h3 {
+        font-size: 16px;
+        padding-right: 0;
+    }
+
+    #page4 {
+        overflow: hidden;
+    }
+
     .hero-content {
-        padding-top: 10vw;
+        padding-top: 20vw;
+    }
+
+    .contact {
+        height: 67px;
+    }
+
+    .contact .line {
+        top: 30%;
     }
 
     .mbMenuItems {
         position: absolute;
-        top: 8%;
+        top: 70px;
         height: 100%;
         right: 0;
         width: 100%;
@@ -1032,5 +1053,31 @@ input::placeholder {
 
     .mbMenuItems .talk p span {
         color: #fff;
+    }
+
+    #page2 {
+        min-height: 100%;
+    }
+
+    .casestudies {
+        flex-direction: column;
+    }
+
+    .key-value .list .item,
+    .page3-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+    }
+
+    .footer .top_section {
+        flex-direction: column;
+    }
+
+    .swiper-slide {
+        width: 250px !important;
+    }
+
+    .footer .top_section .right {
+        margin-top: 80px;
     }
 }

@@ -96,6 +96,14 @@ tl.from(
   },
   "<",
 );
+tl.from(
+  ".menuBtn",
+  {
+    opacity: 0,
+    y: -20,
+  },
+  "<",
+);
 
 tl.from(".hero-foot", {
   y: 100,
@@ -563,7 +571,7 @@ contactHover.addEventListener("mouseenter", () => {
     },
   );
   gsap.to(".contact .line", {
-    width: "220px",
+    width: "18%",
     right: "41%",
   });
 });
@@ -575,7 +583,7 @@ contactHover.addEventListener("mouseleave", () => {
   });
   gsap.to(".contact .line", {
     right: "36%",
-    width: "338px",
+    width: "28%",
   });
 });
 
