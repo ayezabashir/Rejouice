@@ -1,4 +1,4 @@
-### Rejouice Clone
+## Rejouice 
 
 <p align="center">
   <a href="https://rejouice-eight.vercel.app/"><strong>Explore the Live Demo »</strong></a>
