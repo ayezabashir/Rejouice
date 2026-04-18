@@ -11,7 +11,7 @@ This project is a frontend implementation of the **Rejouice** landing page. The 
 ---
 
 
-### 🛠️ Core Tech Stack
+## 🛠️ Core Tech Stack
 
 * **HTML5 & CSS3:** For structural layout and styling.
 * **JavaScript (ES6+):** Handling the core interactivity and logic.
@@ -30,7 +30,7 @@ This project is a frontend implementation of the **Rejouice** landing page. The 
 
 ---
 
-### ## Getting Started
+## Getting Started
 
 This project is designed for simplicity and does not require a package manager.
 
