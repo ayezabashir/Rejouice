@@ -47,7 +47,7 @@ This project is designed for simplicity and does not require a package manager.
 
 ## 📬 Contact
 **Ayeza Bashir**
-* **Portfolio:** [ayeza-bashir-portfolio.vercel.app](https://ayeza-bashir-portfolio.vercel.app/)
+* **Portfolio:** [ayeza-bashir-portfolio.vercel.app](https://ayezabashirportfolio.vercel.app/)
 * **LinkedIn:** [in/ayezabashir](https://linkedin.com/in/ayezabashir/)
 * **Email:** ayezabashir46@gmail.com
 
